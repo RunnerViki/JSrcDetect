@@ -1,8 +1,8 @@
 package sourceCode.java.lang.Class;
 
 /**
- * SyntheticClassÊÇÒ»¸öºÏ³ÉÀà£¬JVMÔÚ±àÒëÀàÊ±£¬Ò²»á±àÒë¸ÃÀàÄÚ²¿¶¨ÒåµÄÀà(Èç£¬ÄÚ²¿Àà£¬·½·¨ÄÚ²¿¶¨ÒåµÄÀà)£¬ÕâĞ©Àà³ÆÖ®ÎªºÏ³ÉÀà
- * Òò´Ë£¬µ±Ç°ÀàÎÄ¼şÔÚ±àÒëºó£¬»áÓĞÈçÏÂ¼¸¸öÎÄ¼ş£º
+ * SyntheticClassæ˜¯ä¸€ä¸ªåˆæˆç±»ï¼ŒJVMåœ¨ç¼–è¯‘ç±»æ—¶ï¼Œä¹Ÿä¼šç¼–è¯‘è¯¥ç±»å†…éƒ¨å®šä¹‰çš„ç±»(å¦‚ï¼Œå†…éƒ¨ç±»ï¼Œæ–¹æ³•å†…éƒ¨å®šä¹‰çš„ç±»)ï¼Œè¿™äº›ç±»ç§°ä¹‹ä¸ºåˆæˆç±»
+ * å› æ­¤ï¼Œå½“å‰ç±»æ–‡ä»¶åœ¨ç¼–è¯‘åï¼Œä¼šæœ‰å¦‚ä¸‹å‡ ä¸ªæ–‡ä»¶ï¼š
  * 	SyntheticClassTest$1.class
  * 	SyntheticClassTest$MyInner.class
  * 	SyntheticClassTest.class
@@ -14,7 +14,7 @@ public class SyntheticClassTest {
 		for (int x = 0; x < 4; x++) {
 			new Thread(new Runnable() {
 				public void run() {
-					System.out.println("µ±Ç°Ïß³ÌÊÇ"
+					System.out.println("å½“å‰çº¿ç¨‹æ˜¯"
 							+ Thread.currentThread().getName());
 				}
 			}).start();

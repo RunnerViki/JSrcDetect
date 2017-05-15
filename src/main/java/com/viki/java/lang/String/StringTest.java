@@ -6,119 +6,119 @@ import java.util.regex.Pattern;
 
 public class StringTest {
 
-	
+
 	/**
-	 * 1¡¢¡°public final class String¡±ËµÃ÷StringÊÇÒ»¸öfinalÀà£¬²»ÄÜ±»¼Ì³Ğ
+	 * 1ã€â€œpublic final class Stringâ€è¯´æ˜Stringæ˜¯ä¸€ä¸ªfinalç±»ï¼Œä¸èƒ½è¢«ç»§æ‰¿
 	 * **/
-	
+
 	/**
-	 * 2¡¢StringÀàÊµÏÖÁËÈı¸ö½Ó¿Ú£ºjava.io.Serializable, Comparable<String>, CharSequence£¬¿ÉÒÔÊµÏÖĞòÁĞ»¯£¬¿É±È½Ï¹¦ÄÜ£¬Í¬Ê±×öÎªÒ»¸ö×Ö·ûĞòÁĞ¶ÔÏó
+	 * 2ã€Stringç±»å®ç°äº†ä¸‰ä¸ªæ¥å£ï¼šjava.io.Serializable, Comparable<String>, CharSequenceï¼Œå¯ä»¥å®ç°åºåˆ—åŒ–ï¼Œå¯æ¯”è¾ƒåŠŸèƒ½ï¼ŒåŒæ—¶åšä¸ºä¸€ä¸ªå­—ç¬¦åºåˆ—å¯¹è±¡
 	 * **/
-	
-	/*   
-	 * 3¡¢³õÊ¼»¯Ê±£¬Ä¬ÈÏ·ÖÅäÒ»¸ö¿ÕµÄcharÊı×é 
+
+	/*
+	 * 3ã€åˆå§‹åŒ–æ—¶ï¼Œé»˜è®¤åˆ†é…ä¸€ä¸ªç©ºçš„charæ•°ç»„
 	 * public String() {
         this.value = new char[0];
     }*/
-	
+
 	/**
-	 * 4¡¢
-	 * ³õÊ¼»¯Ò»¸östring¶ÔÏóµÄÁ½ÖÖ·½·¨¼°Çø±ğ£º
-	 * 	String strA = "abc";  
-	 * 	String strB = "abc";  
-	 * 	System.out.println(strA == strB);  
-	 * 	//true	ËµÃ÷Á½¸öÒıÓÃÖ¸ÏòµÄÊÇÍ¬Ò»¸ö¶ÔÏó
-	 * 
-	 * 	String strAA = new String(strA);  
-	 * 	System.out.println(strA == strAA);  
-	 * 	//false	ËµÃ÷ËäÈ»strAAÃüÃûÓÃstrA×öÎª³õÊ¼»¯²ÎÊı³õÊ¼»¯Ò»¸öÍ¬ÑùÄÚÈİµÄString¶ÔÏó£¬
-	 * 			µ«strAA²¢Ã»ÓĞÖ±½ÓÒıÓÃÕâ¸öString,¶øÊÇ¸´ÖÆÁËÕâ¸ö¶ÔÏóÄÚÈİ£¬·ÅÔÚÁíÒ»¿éÄÚ´æ¿Õ¼äÀï¡£
-	 * 
-	 * 	System.out.println(strAA == strBB);  
-	 * 	//false	ËµÃ÷Á½¸ö¶ÔÏó¶¼Ö±½ÓÊ¹ÓÃÔÚÖ÷´æÖĞ·ÖÅäÒ»¸öĞÂµÄµØÖ·ÒÔ´´½¨ĞÂ¶ÔÏóµÄ·½Ê½ÊµÏÖ
+	 * 4ã€
+	 * åˆå§‹åŒ–ä¸€ä¸ªstringå¯¹è±¡çš„ä¸¤ç§æ–¹æ³•åŠåŒºåˆ«ï¼š
+	 * 	String strA = "abc";
+	 * 	String strB = "abc";
+	 * 	System.out.println(strA == strB);
+	 * 	//true	è¯´æ˜ä¸¤ä¸ªå¼•ç”¨æŒ‡å‘çš„æ˜¯åŒä¸€ä¸ªå¯¹è±¡
+	 *
+	 * 	String strAA = new String(strA);
+	 * 	System.out.println(strA == strAA);
+	 * 	//false	è¯´æ˜è™½ç„¶strAAå‘½åç”¨strAåšä¸ºåˆå§‹åŒ–å‚æ•°åˆå§‹åŒ–ä¸€ä¸ªåŒæ ·å†…å®¹çš„Stringå¯¹è±¡ï¼Œ
+	 * 			ä½†strAAå¹¶æ²¡æœ‰ç›´æ¥å¼•ç”¨è¿™ä¸ªString,è€Œæ˜¯å¤åˆ¶äº†è¿™ä¸ªå¯¹è±¡å†…å®¹ï¼Œæ”¾åœ¨å¦ä¸€å—å†…å­˜ç©ºé—´é‡Œã€‚
+	 *
+	 * 	System.out.println(strAA == strBB);
+	 * 	//false	è¯´æ˜ä¸¤ä¸ªå¯¹è±¡éƒ½ç›´æ¥ä½¿ç”¨åœ¨ä¸»å­˜ä¸­åˆ†é…ä¸€ä¸ªæ–°çš„åœ°å€ä»¥åˆ›å»ºæ–°å¯¹è±¡çš„æ–¹å¼å®ç°
 	 * **/
 	public void initDifference(){
-        String strA = "abc";  
-        String strB = "abc";  
-        String strAA = new String(strA);  
-        String strBB = new String(strB);  
-        System.out.println(strA == strB);  	//true
-        System.out.println(strA == strAA);  //false
-        System.out.println(strAA == strBB); //false
+		String strA = "abc";
+		String strB = "abc";
+		String strAA = new String(strA);
+		String strBB = new String(strB);
+		System.out.println(strA == strB);  	//true
+		System.out.println(strA == strAA);  //false
+		System.out.println(strAA == strBB); //false
 	}
-	
+
 	/**
-	 * 5¡¢
+	 * 5ã€
 	 * String oldStr = "abcdefghijklmnopqrstuvwxyz";
 	 * String newStr = oldStr.substring(oldStr,0,1);
 	 * String anotherStr = new String(oldStr.substring(oldStr,0,1));
 	 * oldStr = null;
-	 * 
-	 * ÔÚoldStr±»ÖÃÎªnullÖ®ºó£¬oldStrÕı³£Çé¿öÏÂ¿ÉÄÜ»á±»»ØÊÕ£¬µ«ÓÉÓÚnewStrÔÚ±»¸³ÖµÊ±¹²ÏíÁËoldStrµÄÄÚÈİ£¬ËùÒÔµ¼ÖÂ²»»á±»»ØÊÕ¡£
-	 * µ«Èç¹ûÊ¹ÓÃanotherStrµÄ·½Ê½£¬ÔòÔÚoldStr±»ÖÃÎªNullºó£¬ÓĞ¿ÉÄÜ»á±»»ØÊÕµô¡£
-	 * ÒòÎªnew String()µÄ·½Ê½»á¸´ÖÆÒ»·İÔ­ÓĞµÄstring²ÎÊıÄÚÈİ£¬²¢ÔÚ¶ÑÖĞ´´½¨¡£
-	 * ¿ÉÄÜÕâÊÇÊ¹ÓÃnew String()´´½¨string¶ÔÏóµÄÎ¨Ò»ÓÅµã
+	 *
+	 * åœ¨oldStrè¢«ç½®ä¸ºnullä¹‹åï¼ŒoldStræ­£å¸¸æƒ…å†µä¸‹å¯èƒ½ä¼šè¢«å›æ”¶ï¼Œä½†ç”±äºnewStråœ¨è¢«èµ‹å€¼æ—¶å…±äº«äº†oldStrçš„å†…å®¹ï¼Œæ‰€ä»¥å¯¼è‡´ä¸ä¼šè¢«å›æ”¶ã€‚
+	 * ä½†å¦‚æœä½¿ç”¨anotherStrçš„æ–¹å¼ï¼Œåˆ™åœ¨oldStrè¢«ç½®ä¸ºNullåï¼Œæœ‰å¯èƒ½ä¼šè¢«å›æ”¶æ‰ã€‚
+	 * å› ä¸ºnew String()çš„æ–¹å¼ä¼šå¤åˆ¶ä¸€ä»½åŸæœ‰çš„stringå‚æ•°å†…å®¹ï¼Œå¹¶åœ¨å †ä¸­åˆ›å»ºã€‚
+	 * å¯èƒ½è¿™æ˜¯ä½¿ç”¨new String()åˆ›å»ºstringå¯¹è±¡çš„å”¯ä¸€ä¼˜ç‚¹
 	 * **/
-	
-	
+
+
 	/**
-	 * 6¡¢Á½¸ö¹¹Ôìº¯ÊıµÄ¶Ô±È£º
+	 * 6ã€ä¸¤ä¸ªæ„é€ å‡½æ•°çš„å¯¹æ¯”ï¼š
 	 *     public String(StringBuffer buffer) {
-		        synchronized(buffer) {
-		            this.value = Arrays.copyOf(buffer.getValue(), buffer.length());
-		        }
-		   }
-		   ÔÚ¸Ã·½·¨ÖĞÊ¹ÓÃsynchronized£¬±£Ö¤ÁËbufferµÄÁ½¸ö·½·¨²Ù×÷ÊÇÍ¬Ò»¸ö¶ÔÏó¿ìÕÕ¡£·ñÔòÔÚÈçÏÂÇéĞÎÊ±£¬½«»á³ö´í£º
-		   µ±Ç°Ïß³Ì»ñµÃbuffer.getValueºó(Èç£ºabcd)£¬ÁíÒ»¸öÏß³ÌĞŞ¸ÄÁËbufferµÄvalue£¬²¢µ¼ÖÂLengthµÄÖµ·¢ÉúÁË±ä»¯(Èç£ºxy)¡£
-		   ÕâÊ±µ±Ç°Ïß³ÌÓÖÄÃµ½ÁËbuffer.length£¬»ñÈ¡µ½ÁËÒ»¸öÒâÍâµÄlengthÖµ£¬ÕâÊ±½«²úÉúÒ»¸öÒâÍâµÄString¶ÔÏó(ab).
-		    
-		   public String(StringBuilder builder) {
-		   		this.value = Arrays.copyOf(builder.getValue(), builder.length());
-		   }
-		   ÓÉÓÚStringBuilder²¢²»ÊÇÒ»¸öÏß³Ì°²È«µÄ¶ÔÏó(¶ÔStringBuilderµÄ²Ù×÷¶¼Ã»ÓĞÌí¼ÓÅÅËûËø)£¬ËùÒÔÕâÀï¼´Ê¹¼ÓÉÏÁËËø£¬Ò²ÎŞ¼ÃÓÚÊÂ¡£
-		   ¼ÈÈ»Ê¹ÓÃÁËStringBuilder£¬¾Í±ØĞëÃ÷ÖªÔÚµ±Ç°»·¾³ÏÂ£¬²»»á²úÉúÏß³Ì°²È«ÎÊÌâ¡£
+	 synchronized(buffer) {
+	 this.value = Arrays.copyOf(buffer.getValue(), buffer.length());
+	 }
+	 }
+	 åœ¨è¯¥æ–¹æ³•ä¸­ä½¿ç”¨synchronizedï¼Œä¿è¯äº†bufferçš„ä¸¤ä¸ªæ–¹æ³•æ“ä½œæ˜¯åŒä¸€ä¸ªå¯¹è±¡å¿«ç…§ã€‚å¦åˆ™åœ¨å¦‚ä¸‹æƒ…å½¢æ—¶ï¼Œå°†ä¼šå‡ºé”™ï¼š
+	 å½“å‰çº¿ç¨‹è·å¾—buffer.getValueå(å¦‚ï¼šabcd)ï¼Œå¦ä¸€ä¸ªçº¿ç¨‹ä¿®æ”¹äº†bufferçš„valueï¼Œå¹¶å¯¼è‡´Lengthçš„å€¼å‘ç”Ÿäº†å˜åŒ–(å¦‚ï¼šxy)ã€‚
+	 è¿™æ—¶å½“å‰çº¿ç¨‹åˆæ‹¿åˆ°äº†buffer.lengthï¼Œè·å–åˆ°äº†ä¸€ä¸ªæ„å¤–çš„lengthå€¼ï¼Œè¿™æ—¶å°†äº§ç”Ÿä¸€ä¸ªæ„å¤–çš„Stringå¯¹è±¡(ab).
+
+	 public String(StringBuilder builder) {
+	 this.value = Arrays.copyOf(builder.getValue(), builder.length());
+	 }
+	 ç”±äºStringBuilderå¹¶ä¸æ˜¯ä¸€ä¸ªçº¿ç¨‹å®‰å…¨çš„å¯¹è±¡(å¯¹StringBuilderçš„æ“ä½œéƒ½æ²¡æœ‰æ·»åŠ æ’ä»–é”)ï¼Œæ‰€ä»¥è¿™é‡Œå³ä½¿åŠ ä¸Šäº†é”ï¼Œä¹Ÿæ— æµäºäº‹ã€‚
+	 æ—¢ç„¶ä½¿ç”¨äº†StringBuilderï¼Œå°±å¿…é¡»æ˜çŸ¥åœ¨å½“å‰ç¯å¢ƒä¸‹ï¼Œä¸ä¼šäº§ç”Ÿçº¿ç¨‹å®‰å…¨é—®é¢˜ã€‚
 	 * **/
-	
+
 	/**
-	 * 7¡¢ÅĞ¶ÏÁ½¸östring¶ÔÏóµÄÄÚÈİÊÇ·ñÏàµÈÊ±£¬Ê¹ÓÃequals£¬µ«ÕâÖÖ±È½ÏÊÇÇø·Ö´óĞ¡Ğ´µÄ£¬ĞèÒªÊ¹ÓÃequalsIgnoreCaseÅĞ¶ÏºöÂÔ´óĞ¡Ğ´Ê±µÄ±È½Ï
+	 * 7ã€åˆ¤æ–­ä¸¤ä¸ªstringå¯¹è±¡çš„å†…å®¹æ˜¯å¦ç›¸ç­‰æ—¶ï¼Œä½¿ç”¨equalsï¼Œä½†è¿™ç§æ¯”è¾ƒæ˜¯åŒºåˆ†å¤§å°å†™çš„ï¼Œéœ€è¦ä½¿ç”¨equalsIgnoreCaseåˆ¤æ–­å¿½ç•¥å¤§å°å†™æ—¶çš„æ¯”è¾ƒ
 	 * **/
 	public void equalsTest(){
 		System.out.println("asdfas".equals("asdfas"));				//true
 		System.out.println("asdfas".equals("ASDFAS"));				//false
 		System.out.println("asdfas".equalsIgnoreCase("ASDFAS"));	//true
 	}
-	
+
 	public char[] ch = new char[]{'a','a','a','a','a','a',};
-	
+
 	/**
-	 * 8¡¢¹²ÓĞËÄ¸ö°æ±¾£º
-	 * replace(char oldChar, char newChar)£¬Ö±½ÓÊ¹ÓÃÑ­»·×Ö·û´®ÄÚÈİµÄ·½Ê½½øĞĞÌæ»»
-	 * replaceFirst¡¢replace(CharSequence target, CharSequence replacement)¡¢replaceAllÔÚÄÚ²¿²ÉÓÃMatcher¶ÔÏóÀ´ÊµÏÖÌæ»»
-	 * ÆäÖĞreplace(CharSequence target, CharSequence replacement)ÊÇÏÈ¶¨ÒåÁËÒ»¸öÎÄ±¾ÀàĞÍµÄ
-	 * pattern¶ÔÏóPattern.compile(target.toString(), Pattern.LITERAL)
-	 * ÔÚ°Ñpattern¶ÔÏó¶¨ÒåÎªÎÄ±¾ĞÍÊ±£¬Pattern¶ÔÏóµÄ±í´ïÊ¾¶¼½«±»ÈÏÎªÊÇÒ»¸öÎÄ±¾ĞÍ£¬¼´Ê¹ÖĞ¼äº¬ÓĞÒ»Ğ©ÕıÔò±í´ïÊ½×Ó£»
-	 * 
+	 * 8ã€å…±æœ‰å››ä¸ªç‰ˆæœ¬ï¼š
+	 * replace(char oldChar, char newChar)ï¼Œç›´æ¥ä½¿ç”¨å¾ªç¯å­—ç¬¦ä¸²å†…å®¹çš„æ–¹å¼è¿›è¡Œæ›¿æ¢
+	 * replaceFirstã€replace(CharSequence target, CharSequence replacement)ã€replaceAllåœ¨å†…éƒ¨é‡‡ç”¨Matcherå¯¹è±¡æ¥å®ç°æ›¿æ¢
+	 * å…¶ä¸­replace(CharSequence target, CharSequence replacement)æ˜¯å…ˆå®šä¹‰äº†ä¸€ä¸ªæ–‡æœ¬ç±»å‹çš„
+	 * patternå¯¹è±¡Pattern.compile(target.toString(), Pattern.LITERAL)
+	 * åœ¨æŠŠpatternå¯¹è±¡å®šä¹‰ä¸ºæ–‡æœ¬å‹æ—¶ï¼ŒPatternå¯¹è±¡çš„è¡¨è¾¾ç¤ºéƒ½å°†è¢«è®¤ä¸ºæ˜¯ä¸€ä¸ªæ–‡æœ¬å‹ï¼Œå³ä½¿ä¸­é—´å«æœ‰ä¸€äº›æ­£åˆ™è¡¨è¾¾å¼å­ï¼›
+	 *
 	 * TODO
-	 * ÎªÊ²Ã´Pattern.compile(".*").matcher("asdfadf").replaceAll("new")
-	 * ÓëPattern.compile(".*").matcher("asdfadf.*").replaceAll("new")µÄÊä³ö²»ÏàÍ¬?
-	 * 
-	 * ÎªÊ²Ã´Pattern.compile(".*").matcher("asdfadf").replaceAll("new")»áÊä³öÁ½¸önew?
+	 * ä¸ºä»€ä¹ˆPattern.compile(".*").matcher("asdfadf").replaceAll("new")
+	 * ä¸Pattern.compile(".*").matcher("asdfadf.*").replaceAll("new")çš„è¾“å‡ºä¸ç›¸åŒ?
+	 *
+	 * ä¸ºä»€ä¹ˆPattern.compile(".*").matcher("asdfadf").replaceAll("new")ä¼šè¾“å‡ºä¸¤ä¸ªnew?
 	 * **/
 	public void replaceTest(){
-		System.out.println("String¶Ô\nÏóµÄËÄÖÖÌæ»»·½·¨£¬¶Ô\nÏó1".replace('¶Ô', '¼Ù'));
-		System.out.println("String¶Ô\nÏóµÄËÄÖÖÌæ»»·½·¨£¬¶Ô\nÏó2".replace("¶Ô", "¼Ù"));
-		System.out.println("String¶Ô\nÏóµÄËÄÖÖÌæ»»·½·¨£¬¶Ô\nÏó3".replaceFirst("¶Ô\n", "¼Ù"));
-		System.out.println("String¶Ô\nÏóµÄËÄÖÖÌæ»»·½·¨£¬¶Ô\nÏó4".replaceAll("¶Ô\n", "¼Ù"));
-		
+		System.out.println("Stringå¯¹\nè±¡çš„å››ç§æ›¿æ¢æ–¹æ³•ï¼Œå¯¹\nè±¡1".replace('å¯¹', 'å‡'));
+		System.out.println("Stringå¯¹\nè±¡çš„å››ç§æ›¿æ¢æ–¹æ³•ï¼Œå¯¹\nè±¡2".replace("å¯¹", "å‡"));
+		System.out.println("Stringå¯¹\nè±¡çš„å››ç§æ›¿æ¢æ–¹æ³•ï¼Œå¯¹\nè±¡3".replaceFirst("å¯¹\n", "å‡"));
+		System.out.println("Stringå¯¹\nè±¡çš„å››ç§æ›¿æ¢æ–¹æ³•ï¼Œå¯¹\nè±¡4".replaceAll("å¯¹\n", "å‡"));
+
 		System.out.println(Pattern.compile(".*", Pattern.LITERAL).matcher("asdfadf").replaceAll("new"));
 		System.out.println(Pattern.compile(".*", Pattern.LITERAL).matcher("asdfadf.*").replaceAll("new"));
 		System.out.println(Pattern.compile(".*").matcher("asdfadf").replaceAll("new"));
 		System.out.println(Pattern.compile(".*").matcher("asdfadf.*").replaceAll("new"));
-		
+
 		/**
 		 * 	xxx->asdfadf
 		 *	xxx->
-		 *	´ÓÊä³ö¹Û²ìµÚÒ»´ÎÆ¥ÅäÉÏÁËËùÓĞ×Ö·û´®£¬µ«µÚ¶ş´ÎÈ´Æ¥ÅäÉÏÁËÒ»¸ö¿Õ´®£¬ËùÒÔµ¼ÖÂÊä³öÁ½´Î
+		 *	ä»è¾“å‡ºè§‚å¯Ÿç¬¬ä¸€æ¬¡åŒ¹é…ä¸Šäº†æ‰€æœ‰å­—ç¬¦ä¸²ï¼Œä½†ç¬¬äºŒæ¬¡å´åŒ¹é…ä¸Šäº†ä¸€ä¸ªç©ºä¸²ï¼Œæ‰€ä»¥å¯¼è‡´è¾“å‡ºä¸¤æ¬¡
 		 * **/
 		Pattern p = Pattern.compile(".*");
 		Matcher m = p.matcher("asdfadf");
@@ -126,53 +126,53 @@ public class StringTest {
 			System.out.println("xxx->" + m.group());
 		}
 	}
-	
+
 	/**
-	 * 9¡¢³£ÓÃÒ»¸ö¹Ì¶¨µÄÎÄ±¾×ö·Ö¸î£¬ÆäÊµÓ¦¸Ã½ÓÊÕÒ»¸ö¡¾ÕıÔò±í´ïÊ½¡¿
-	 * 	ÎªÊ²Ã´»á°Ñ×îºóÒ»¸ö·Ç¿Õ×Ö·û´®ºóÃæµÄ¿Õ´®¸øÖ±½ÓÈ¥µô£¿
-	 * ½áÂÛ£º¡¾ÔÚÊ¹ÓÃsplit×ö·Ö¸îÊ±£¬Èç¹ûÓĞ½ôÁÚµÄÁ½¸ö·Ö¸î·û£¬Ôò»á²úÉúÒ»¸ö¿Õ´®¡£Èç¹ûÉú³ÉµÄÊı×éÔÚ¸Ã¿Õ´®ºóÃ»ÓĞÆäËû·Ç¿Õ´®µÄ×Ö·û´®£¬Ôò»á±»ºöÂÔ¡£¡¿
+	 * 9ã€å¸¸ç”¨ä¸€ä¸ªå›ºå®šçš„æ–‡æœ¬åšåˆ†å‰²ï¼Œå…¶å®åº”è¯¥æ¥æ”¶ä¸€ä¸ªã€æ­£åˆ™è¡¨è¾¾å¼ã€‘
+	 * 	ä¸ºä»€ä¹ˆä¼šæŠŠæœ€åä¸€ä¸ªéç©ºå­—ç¬¦ä¸²åé¢çš„ç©ºä¸²ç»™ç›´æ¥å»æ‰ï¼Ÿ
+	 * ç»“è®ºï¼šã€åœ¨ä½¿ç”¨splitåšåˆ†å‰²æ—¶ï¼Œå¦‚æœæœ‰ç´§é‚»çš„ä¸¤ä¸ªåˆ†å‰²ç¬¦ï¼Œåˆ™ä¼šäº§ç”Ÿä¸€ä¸ªç©ºä¸²ã€‚å¦‚æœç”Ÿæˆçš„æ•°ç»„åœ¨è¯¥ç©ºä¸²åæ²¡æœ‰å…¶ä»–éç©ºä¸²çš„å­—ç¬¦ä¸²ï¼Œåˆ™ä¼šè¢«å¿½ç•¥ã€‚ã€‘
 	 * **/
 	public void splitTest(){
 		System.out.println(Arrays.toString("a||||||5|||||s".split("\\||\\d")));
 		System.out.println(Arrays.toString("a||||||5|||||s||".split("\\||\\d")));
 		System.out.println(Arrays.toString("a||||||5|||||".split("\\||\\d")));
 	}
-	
-	
+
+
 	/**
-	 * 10¡¢formatÍê³ÉÁ½¸ö¹¦ÄÜ£º¶ÔÏóÆ´½ÓÓë¸ñÊ½»¯
-	 * 	formatµÚ¶ş¸ö²ÎÊı½ÓÊÕ¶à¸öobject¶ÔÏó£¬²¢°´´ÎĞòÌî³ä½øµÚÒ»¸ö²ÎÊı£¬Òò´Ë¿ÉÒÔÊµÏÖ×Ö·û´®Æ´½Ó¹¦ÄÜ£»
-	 * 	µÚÒ»¸ö¸ñÊ½»¯µÄ²ÎÊıÖ§³Ö×Ô¶¨Òå¸ñÊ½»¯ÀàĞÍ¼°ÑùÊ½
-	 * 
+	 * 10ã€formatå®Œæˆä¸¤ä¸ªåŠŸèƒ½ï¼šå¯¹è±¡æ‹¼æ¥ä¸æ ¼å¼åŒ–
+	 * 	formatç¬¬äºŒä¸ªå‚æ•°æ¥æ”¶å¤šä¸ªobjectå¯¹è±¡ï¼Œå¹¶æŒ‰æ¬¡åºå¡«å……è¿›ç¬¬ä¸€ä¸ªå‚æ•°ï¼Œå› æ­¤å¯ä»¥å®ç°å­—ç¬¦ä¸²æ‹¼æ¥åŠŸèƒ½ï¼›
+	 * 	ç¬¬ä¸€ä¸ªæ ¼å¼åŒ–çš„å‚æ•°æ”¯æŒè‡ªå®šä¹‰æ ¼å¼åŒ–ç±»å‹åŠæ ·å¼
+	 *
 	 * **/
 	public void formatTest(){
 		System.out.println(String.format("$%,.2f", 222100.2222f));
 	}
-	
+
 	/**
-	 * 11¡¢intern()ÓÃÓÚÅĞ¶ÏÊÇ·ñÓĞÓë¸Ã×Ö·û´®ÄÚÈİÏàÍ¬µÄ×Ö·û´®´æÔÚÓÚ×Ö·û´®³£Á¿³ØÖĞ£¬Èç¹û´æÔÚ£¬ÔòÖ¸Ïò³£Á¿³ØÖĞµÄ×Ö·û´®µÄµØÖ·£¬Èç¹ûÃ»ÓĞÔòÔÚ×Ö·û´®³£Á¿³ØÖĞ´´½¨Ò»¸ö²¢Ö¸Ïò¸Ã×Ö·û´®µØÖ·£»
+	 * 11ã€intern()ç”¨äºåˆ¤æ–­æ˜¯å¦æœ‰ä¸è¯¥å­—ç¬¦ä¸²å†…å®¹ç›¸åŒçš„å­—ç¬¦ä¸²å­˜åœ¨äºå­—ç¬¦ä¸²å¸¸é‡æ± ä¸­ï¼Œå¦‚æœå­˜åœ¨ï¼Œåˆ™æŒ‡å‘å¸¸é‡æ± ä¸­çš„å­—ç¬¦ä¸²çš„åœ°å€ï¼Œå¦‚æœæ²¡æœ‰åˆ™åœ¨å­—ç¬¦ä¸²å¸¸é‡æ± ä¸­åˆ›å»ºä¸€ä¸ªå¹¶æŒ‡å‘è¯¥å­—ç¬¦ä¸²åœ°å€ï¼›
 	 * **/
 	public void internTest(){
-		String s0= "testString";   
-		String s1=new String("testString");   
-		String s2=new String("testString");   
-		System.out.println( s0==s1 );   
-		s1.intern();   
-		s2=s2.intern(); 
-		System.out.println( s0==s1);   
-		System.out.println( s0==s1.intern() );   
-		System.out.println( s0==s2 );   
+		String s0= "testString";
+		String s1=new String("testString");
+		String s2=new String("testString");
+		System.out.println( s0==s1 );
+		s1.intern();
+		s2=s2.intern();
+		System.out.println( s0==s1);
+		System.out.println( s0==s1.intern() );
+		System.out.println( s0==s2 );
 	}
-	
-	
+
+
 	public static void main(String[] args){
 		StringTest stringTest = new StringTest();
 		//stringTest.initDifference();
-		
+
 		//String te = null;
 		//System.out.println(te.isEmpty());
-		
-		
+
+
 		stringTest.formatTest();
 	}
 }

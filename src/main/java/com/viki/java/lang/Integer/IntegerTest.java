@@ -4,29 +4,29 @@ public class IntegerTest {
 
 	public void binOr(){
 		int x = 54;
-		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x)+"	ºóÃæÌí¼ÓµÄÖµ£º"+Integer.toBinaryString(x>>1));
+		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x)+"	åŽé¢æ·»åŠ çš„å€¼ï¼š"+Integer.toBinaryString(x>>1));
 		x |= x>>1;
-		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x)+"	ºóÃæÌí¼ÓµÄÖµ£º"+Integer.toBinaryString(x>>2));
+		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x)+"	åŽé¢æ·»åŠ çš„å€¼ï¼š"+Integer.toBinaryString(x>>2));
 		x |= x>>2;
-		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x)+"	ºóÃæÌí¼ÓµÄÖµ£º"+Integer.toBinaryString(x>>4));
+		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x)+"	åŽé¢æ·»åŠ çš„å€¼ï¼š"+Integer.toBinaryString(x>>4));
 		x |= x>>4;
-		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x)+"	ºóÃæÌí¼ÓµÄÖµ£º"+Integer.toBinaryString(x>>8));
+		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x)+"	åŽé¢æ·»åŠ çš„å€¼ï¼š"+Integer.toBinaryString(x>>8));
 		x |= x>>8;
-		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x)+"	ºóÃæÌí¼ÓµÄÖµ£º"+Integer.toBinaryString(x>>16));
+		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x)+"	åŽé¢æ·»åŠ çš„å€¼ï¼š"+Integer.toBinaryString(x>>16));
 		x |= x>>16;
-		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x));
-		System.out.println((x >>> 1)+"×îÖÕ½á¹û"+Integer.toBinaryString(x >>> 1));
+		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x));
+		System.out.println((x >>> 1)+"æœ€ç»ˆç»“æžœ"+Integer.toBinaryString(x >>> 1));
 	}
-	
+
 	public static void main(String[] args){
 		//new IntegerTest().binOr();
 		System.out.println(roundUpToPowerOf2(54));
 	}
-	
-    private static int roundUpToPowerOf2(int number) {
-        // assert number >= 0 : "number must be non-negative";
-        return number >= Integer.MAX_VALUE
-                ? Integer.MAX_VALUE
-                : (number > 1) ? Integer.highestOneBit((number - 1) << 1) : 1;
-    }
+
+	private static int roundUpToPowerOf2(int number) {
+		// assert number >= 0 : "number must be non-negative";
+		return number >= Integer.MAX_VALUE
+				? Integer.MAX_VALUE
+				: (number > 1) ? Integer.highestOneBit((number - 1) << 1) : 1;
+	}
 }

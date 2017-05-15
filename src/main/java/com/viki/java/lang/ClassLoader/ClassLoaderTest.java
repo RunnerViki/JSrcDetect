@@ -5,43 +5,43 @@ import java.util.ArrayList;
 public class ClassLoaderTest {
 
 	/**
-	 * 1¡¢ClassLoader¹¦ÄÜ£º¼ÓÔØJavaÀàµ½JVMÖĞ
-	 * 	JVMÊ¹ÓÃjavaÀàµÄ·½Ê½£º
-	 * 		a) JVM±àÒëjavaÎÄ¼şÎªclassÎÄ¼ş
-	 * 		b) ClassLoader¶ÁÈ¡classÎÄ¼ş£¬²¢×ª»»³ÉÒ»¸öclassÊµÀı£¬Òò´Ë¿ÉÒÔÍ¨¹ıµ÷ÓÃ¸ÃÊµÀıµÄnewInstance()»ñµÃ¸Ã¶ÔÏóµÄÒ»¸öÊµÀı
+	 * 1ã€ClassLoaderåŠŸèƒ½ï¼šåŠ è½½Javaç±»åˆ°JVMä¸­
+	 * 	JVMä½¿ç”¨javaç±»çš„æ–¹å¼ï¼š
+	 * 		a) JVMç¼–è¯‘javaæ–‡ä»¶ä¸ºclassæ–‡ä»¶
+	 * 		b) ClassLoaderè¯»å–classæ–‡ä»¶ï¼Œå¹¶è½¬æ¢æˆä¸€ä¸ªclasså®ä¾‹ï¼Œå› æ­¤å¯ä»¥é€šè¿‡è°ƒç”¨è¯¥å®ä¾‹çš„newInstance()è·å¾—è¯¥å¯¹è±¡çš„ä¸€ä¸ªå®ä¾‹
 	 * **/
-	
+
 	/**
 	 * AppClassLoader:
-	 * 		ÓÃÓÚ¼ÓÔØclassPathÏÂµÄËùÓĞÀà,¿ÉÒÔÍ¨¹ıClassLoader.getSystemClassLoader()»ñÈ¡
-	 * 
-	 * ExtClassLoader£º
-	 * 		ÓÃÓÚ¼ÓÔØ%JAVA_HOME%/jre/lib/extÄ¿Â¼ÏÂµÄÀà
-	 * 
+	 * 		ç”¨äºåŠ è½½classPathä¸‹çš„æ‰€æœ‰ç±»,å¯ä»¥é€šè¿‡ClassLoader.getSystemClassLoader()è·å–
+	 *
+	 * ExtClassLoaderï¼š
+	 * 		ç”¨äºåŠ è½½%JAVA_HOME%/jre/lib/extç›®å½•ä¸‹çš„ç±»
+	 *
 	 * BootstrapClassLoader:
-	 * 		ÓÃÓÚ¼ÓÔØjavaºËĞÄÀà¿â
-	 * 
-	 * AppClassLoaderÊÇExtClassLoaderµÄÒ»¸ö×ÓÀà
-	 * ExtClassLoaderÊÇBootstrapClassLoaderµÄÒ»¸ö×ÓÀà£¬µ«ÓÉÓÚBootstrapClassLoaderÊÇÒ»¸önativeÀà£¬ËùÒÔ²»»áÏÔÊ¾
+	 * 		ç”¨äºåŠ è½½javaæ ¸å¿ƒç±»åº“
+	 *
+	 * AppClassLoaderæ˜¯ExtClassLoaderçš„ä¸€ä¸ªå­ç±»
+	 * ExtClassLoaderæ˜¯BootstrapClassLoaderçš„ä¸€ä¸ªå­ç±»ï¼Œä½†ç”±äºBootstrapClassLoaderæ˜¯ä¸€ä¸ªnativeç±»ï¼Œæ‰€ä»¥ä¸ä¼šæ˜¾ç¤º
 	 */
 	public void getLoaderTest(){
-		
+
 		//sun.misc.Launcher$AppClassLoader
 		System.out.println(ClassLoader.getSystemClassLoader());
-		
+
 		//sun.misc.Launcher$AppClassLoader
 		System.out.println(this.getClass().getClassLoader());
-		
-		//null,ºËĞÄÀà¿âÓÉBootstrapClassLoader¼ÓÔØ£¬ÏÔÊ¾Îªnull
+
+		//null,æ ¸å¿ƒç±»åº“ç”±BootstrapClassLoaderåŠ è½½ï¼Œæ˜¾ç¤ºä¸ºnull
 		System.out.println("StringObj".getClass().getClassLoader());
-		
+
 		//sun.misc.Launcher$ExtClassLoader@55264c84
 		System.out.println(this.getClass().getClassLoader().getParent());
-		
+
 		//null
 		System.out.println(this.getClass().getClassLoader().getParent().getParent());
 	}
-	
+
 	/**
 	 * TODO
 	 */
@@ -49,9 +49,9 @@ public class ClassLoaderTest {
 		NewClassLoader classLoaderA = new NewClassLoader();
 		NewClassLoader classLoaderB = new NewClassLoader();
 		try {
-			ClassLoaderSingletonBean classLoaderSingletonBeanA  = 
+			ClassLoaderSingletonBean classLoaderSingletonBeanA  =
 					(ClassLoaderSingletonBean)classLoaderA.loadClass("sourceCode.java.lang.ClassLoader.ClassLoaderSingletonBean").newInstance();
-			ClassLoaderSingletonBean classLoaderSingletonBeanB  = 
+			ClassLoaderSingletonBean classLoaderSingletonBeanB  =
 					(ClassLoaderSingletonBean)classLoaderB.loadClass("sourceCode.java.lang.ClassLoader.ClassLoaderSingletonBean").newInstance();
 			System.out.println(classLoaderSingletonBeanA == classLoaderSingletonBeanB);
 		} catch (InstantiationException e) {
@@ -61,10 +61,10 @@ public class ClassLoaderTest {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
-	
+
+
 	public static void main(String[] args){
 		ClassLoaderTest classLoaderTest = new ClassLoaderTest();
 		classLoaderTest.isReallySingleton();

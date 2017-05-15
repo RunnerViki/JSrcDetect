@@ -6,11 +6,11 @@ package com.viki.java.lang;
 public class ThreadTest {
 
     /*
-    * Ïß³Ì¶ÔÏó±»ÖÃÎªnull,²¢ÇÒÏÔÊ¾µ÷ÓÃgc¡£°´³£Àí£¬Ïß³ÌÓ¦¸Ã²»ÔÙÊä³öis running£¬µ«½á¹û²¢²»Èç´Ë
-    * Ô­Òò:
-    *   1. µ±Ç°ÕıÔÚÔËĞĞµÄÏß³Ì±»¿´×öÊÇGC roots ¶ÔÏóÖ®Ò»
-    *   2. t = nullÈ»ºógcÖ»»á»ØÊÕ·ÖÅäÔÚ¶ÑÉÏµÄÏß³Ì¶ÔÏó£¬ÎŞ·¨»ØÊÕÔËĞĞÔÚĞéÄâ»úÕ»ÉÏµÄÕ»Ö¡
-    *   3. ¾ÙÀı: mainÏß³ÌÒ²Ã»ÓĞÈÎºÎÒıÓÃÖ¸ÏòËü£¬µ«²»»á±»GC »ØÊÕ£¬¾ÍÒòÎªµÚ1µã.
+    * çº¿ç¨‹å¯¹è±¡è¢«ç½®ä¸ºnull,å¹¶ä¸”æ˜¾ç¤ºè°ƒç”¨gcã€‚æŒ‰å¸¸ç†ï¼Œçº¿ç¨‹åº”è¯¥ä¸å†è¾“å‡ºis runningï¼Œä½†ç»“æœå¹¶ä¸å¦‚æ­¤
+    * åŸå› :
+    *   1. å½“å‰æ­£åœ¨è¿è¡Œçš„çº¿ç¨‹è¢«çœ‹åšæ˜¯GC roots å¯¹è±¡ä¹‹ä¸€
+    *   2. t = nullç„¶ågcåªä¼šå›æ”¶åˆ†é…åœ¨å †ä¸Šçš„çº¿ç¨‹å¯¹è±¡ï¼Œæ— æ³•å›æ”¶è¿è¡Œåœ¨è™šæ‹Ÿæœºæ ˆä¸Šçš„æ ˆå¸§
+    *   3. ä¸¾ä¾‹: mainçº¿ç¨‹ä¹Ÿæ²¡æœ‰ä»»ä½•å¼•ç”¨æŒ‡å‘å®ƒï¼Œä½†ä¸ä¼šè¢«GC å›æ”¶ï¼Œå°±å› ä¸ºç¬¬1ç‚¹.
     * */
     public static void liveThreadAsGcRoots() {
         // anonymous class extends Thread
@@ -39,5 +39,8 @@ public class ThreadTest {
             System.gc();
             System.out.println("Executed System.gc()");
         } // The program will run forever until you use ^C to stop it
+    }
+
+    public static void main(String[] args) {
     }
 }

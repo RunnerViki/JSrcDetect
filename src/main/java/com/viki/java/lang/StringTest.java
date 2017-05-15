@@ -2,30 +2,30 @@ package viki.java.lang.String;
 
 public class StringTest {
 
-	
+
 	/**
-	 * ¡¾1¡¿
+	 * ã€1ã€‘
 	 * 	String s = "0123456789012345678901234567890123456789";
-		String s2 = s.substring(0, 1);
-		s = null;
-		¼´Ê¹sÖÃÎªnull,µ«sÎŞ·¨±»À¬»ø»ØÊÕÆ÷»ØÊÕ£¬ÒòÎªs2¹²ÏíÁËsÔÚ³£Á¿³ØÖĞ´´½¨µÄstring³£Á¿
-		
-		String s2 = new String(s.substring(0, 1));
-		¹¹Ôìº¯Êı»á¸´ÖÆÔ­À´µÄstring¶ÔÏóÖµÎªÒ»¸öĞÂµÄ×Ö·ûÊı×é£¬ÕâÑùÔ­À´µÄ×Ö·û´®½«»á±»À¬»ø»ØÊÕÆ÷»ØÊÕ£»
+	 String s2 = s.substring(0, 1);
+	 s = null;
+	 å³ä½¿sç½®ä¸ºnull,ä½†sæ— æ³•è¢«åƒåœ¾å›æ”¶å™¨å›æ”¶ï¼Œå› ä¸ºs2å…±äº«äº†såœ¨å¸¸é‡æ± ä¸­åˆ›å»ºçš„stringå¸¸é‡
+
+	 String s2 = new String(s.substring(0, 1));
+	 æ„é€ å‡½æ•°ä¼šå¤åˆ¶åŸæ¥çš„stringå¯¹è±¡å€¼ä¸ºä¸€ä¸ªæ–°çš„å­—ç¬¦æ•°ç»„ï¼Œè¿™æ ·åŸæ¥çš„å­—ç¬¦ä¸²å°†ä¼šè¢«åƒåœ¾å›æ”¶å™¨å›æ”¶ï¼›
 	 * */
 	public String Str1 = "Test1211111111";
 	public String Str2 = new String("Test");
-	
-	
-	
-	
-	
+
+
+
+
+
 	public static void main(String[] args){
 		StringTest st = new StringTest();
 		st.new2();
 		st.new1();
 	}
-	
+
 	public void new1(){
 		long time1 = System.currentTimeMillis();
 		for(long i = 0; i< 10000000000L; i++){
@@ -33,7 +33,7 @@ public class StringTest {
 		}
 		System.out.println(System.currentTimeMillis() - time1);
 	}
-	
+
 	public void new2(){
 		long time1 = System.currentTimeMillis();
 		for(long i = 0; i< 10000000000L; i++){

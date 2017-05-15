@@ -12,7 +12,8 @@ import java.util.concurrent.TimeUnit;
  *      1.常用于规范化映射,将不再需要的对象交由JVM自己回收处理.
  *
  * Example:
- *      1. ThreadLocal: 每个Thread都有{@link java.lang.ThreadLocal.ThreadLocalMap}成员，在{@link java.lang.Thread}.exit时被置为空。因此在{@link ThreadLocal#get}执行get()
+ *      1. ThreadLocal: 每个Thread都有{@link java.lang.ThreadLocal.ThreadLocalMap}成员，在{@link java.lang.Thread}.exit时被置为null。但ThreadLocalMap中的{@link java.lang.ThreadLocal.ThreadLocalMap.Entry}数组并未置为空
+ *      2. 由于Entry继承了WeakReference，所以它将在下一个gc时由jvm回收
  */
 public class WeakReferenceTest {
 

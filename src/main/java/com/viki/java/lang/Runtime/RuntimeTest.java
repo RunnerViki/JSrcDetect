@@ -8,39 +8,39 @@ import java.io.InputStreamReader;
 public class RuntimeTest {
 
 	/**
-	 * 1¡¢RuntimeµÄÓÃÍ¾£º
-	 * 		a) Ê¹ÓÃfreeMemory¡¢maxMemory¡¢totalMemoryµÈ·½·¨»ñµÃµ±Ç°JVMÕ¼ÓÃÄÚ´æµÄÇé¿ö
-	 * 		b) Ö´ĞĞGC,runFinalizationÖ´ĞĞ»ØÊÕÄÚ´æ²Ù×÷
-	 * 		c) Í¨¹ıexec·½·¨Ö´ĞĞÍâ²¿ÃüÁî
-	 * 		d) ÎªJVMÔÚÕı³£shutdownÊ±Ö´ĞĞÖ¸¶¨µÄ¶¯×÷
+	 * 1ã€Runtimeçš„ç”¨é€”ï¼š
+	 * 		a) ä½¿ç”¨freeMemoryã€maxMemoryã€totalMemoryç­‰æ–¹æ³•è·å¾—å½“å‰JVMå ç”¨å†…å­˜çš„æƒ…å†µ
+	 * 		b) æ‰§è¡ŒGC,runFinalizationæ‰§è¡Œå›æ”¶å†…å­˜æ“ä½œ
+	 * 		c) é€šè¿‡execæ–¹æ³•æ‰§è¡Œå¤–éƒ¨å‘½ä»¤
+	 * 		d) ä¸ºJVMåœ¨æ­£å¸¸shutdownæ—¶æ‰§è¡ŒæŒ‡å®šçš„åŠ¨ä½œ
 	 * **/
-	
+
 	Runtime runtime = Runtime.getRuntime();
-	
+
 	/**
-	 * ÔÚJVM¿ªÊ¼ÔËĞĞÊ±£¬ÉèÖÃruntimeµÄÊôĞÔ
+	 * åœ¨JVMå¼€å§‹è¿è¡Œæ—¶ï¼Œè®¾ç½®runtimeçš„å±æ€§
 	 */
 	public void runtimeSetting(){
 		runtime.addShutdownHook(new Thread(new Runnable(){
 			public void run(){
-				System.out.println("ÏµÍ³ÖÕÓÚÅÜÍêÀ²£¡");
+				System.out.println("ç³»ç»Ÿç»ˆäºè·‘å®Œå•¦ï¼");
 			}
 		}));
 		runtime.traceMethodCalls(true);
 		runtime.traceInstructions(true);
 	}
-	
+
 	/**
-	 * ¼à¿ØÄÚ´æÊ¹ÓÃÇé¿ö
+	 * ç›‘æ§å†…å­˜ä½¿ç”¨æƒ…å†µ
 	 */
 	public void memoryMonitor(){
-		System.out.println(String.format("µ±Ç°¿ÉÓÃÄÚ´æ:%dM", runtime.freeMemory() >> 20));
-		System.out.println(String.format("µ±Ç°×ÜÄÚ´æ:%dM", runtime.maxMemory() >> 20));
-		System.out.println(String.format("µ±Ç°×î´ó¿É·ÖÅäÄÚ´æ:%dM", runtime.totalMemory() >> 20));
+		System.out.println(String.format("å½“å‰å¯ç”¨å†…å­˜:%dM", runtime.freeMemory() >> 20));
+		System.out.println(String.format("å½“å‰æ€»å†…å­˜:%dM", runtime.maxMemory() >> 20));
+		System.out.println(String.format("å½“å‰æœ€å¤§å¯åˆ†é…å†…å­˜:%dM", runtime.totalMemory() >> 20));
 	}
-	
+
 	/**
-	 * Ö´ĞĞÍâ²¿ÃüÁî£¬²¢ÇÒÊä³ö·µ»ØÊı¾İ
+	 * æ‰§è¡Œå¤–éƒ¨å‘½ä»¤ï¼Œå¹¶ä¸”è¾“å‡ºè¿”å›æ•°æ®
 	 */
 	public void executeExternalCommand(String command){
 		Process process = null;
@@ -62,10 +62,10 @@ public class RuntimeTest {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+
 		}
 	}
-	
+
 	public static void main(String[] args){
 		RuntimeTest runtimeTest = new RuntimeTest();
 		runtimeTest.runtimeSetting();

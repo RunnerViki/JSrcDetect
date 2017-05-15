@@ -3,11 +3,11 @@ package sourceCode.java.lang.ClassLoader;
 public class ClassLoaderSingletonBean {
 
 	private static ClassLoaderSingletonBean classLoaderSingletonBean;
-	
+
 	private ClassLoaderSingletonBean(){}
-	
+
 	/**
-	 * ÒÔDoubleCheck+ÀàËøµÄ·½Ê½»ñµÃÒ»¸öµ¥Àı¶ÔÏó
+	 * ä»¥DoubleCheck+ç±»é”çš„æ–¹å¼è·å¾—ä¸€ä¸ªå•ä¾‹å¯¹è±¡
 	 * @return
 	 */
 	public static ClassLoaderSingletonBean getInstance(){

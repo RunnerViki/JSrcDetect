@@ -5,9 +5,9 @@ public class ClassTest {
 	public static void main(String[] args){
 		ClassTest ct = new ClassTest();
 	}
-	
+
 	/**
-	 * TODO	»¹Ã»ÓÐÅª¶®
+	 * TODO	è¿˜æ²¡æœ‰å¼„æ‡‚
 	 * **/
 	public void isSyntheticTest(){
 		try {
@@ -19,6 +19,6 @@ public class ClassTest {
 		}
 	}
 
-	
-	
+
+
 }
