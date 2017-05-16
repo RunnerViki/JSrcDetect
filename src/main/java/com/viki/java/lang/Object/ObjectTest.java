@@ -1,4 +1,4 @@
-package sourceCode.java.lang.Object;
+package com.viki.java.lang.Object;
 
 public class ObjectTest implements Cloneable{
 

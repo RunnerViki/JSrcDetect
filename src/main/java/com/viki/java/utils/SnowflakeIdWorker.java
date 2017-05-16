@@ -1,4 +1,4 @@
-package utils;
+package com.viki.java.utils;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;

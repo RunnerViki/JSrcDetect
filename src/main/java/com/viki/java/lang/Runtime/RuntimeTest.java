@@ -1,4 +1,4 @@
-package sourceCode.java.lang.Runtime;
+package com.viki.java.lang.Runtime;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,8 +1,6 @@
-package com.viki.java.lang.ref;
+package com.viki.java.lang.ref.WeakReference;
 
 import java.lang.ref.WeakReference;
-import java.sql.Time;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Viki on 2017/5/13.

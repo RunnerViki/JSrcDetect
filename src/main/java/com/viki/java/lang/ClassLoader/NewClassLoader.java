@@ -1,4 +1,4 @@
-package sourceCode.java.lang.ClassLoader;
+package com.viki.java.lang.ClassLoader;
 
 public class NewClassLoader extends ClassLoader {
 

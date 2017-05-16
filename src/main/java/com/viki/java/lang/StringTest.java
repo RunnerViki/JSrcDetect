@@ -1,4 +1,4 @@
-package viki.java.lang.String;
+package com.viki.java.lang;
 
 public class StringTest {
 

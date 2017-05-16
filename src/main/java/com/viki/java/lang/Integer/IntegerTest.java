@@ -1,4 +1,4 @@
-package sourceCode.java.lang.Integer;
+package com.viki.java.lang.Integer;
 
 public class IntegerTest {
 

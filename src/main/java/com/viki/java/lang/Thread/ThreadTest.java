@@ -1,4 +1,4 @@
-package com.viki.java.lang;
+package com.viki.java.lang.Thread;
 
 /**
  * Created by Viki on 2017/5/13.

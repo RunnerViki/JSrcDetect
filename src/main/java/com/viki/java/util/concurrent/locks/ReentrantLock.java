@@ -1,4 +1,4 @@
-package util.concurrent.locks;
+package com.viki.java.util.concurrent.locks;
 
 /**
  * Created by Viki on 2017/5/15.

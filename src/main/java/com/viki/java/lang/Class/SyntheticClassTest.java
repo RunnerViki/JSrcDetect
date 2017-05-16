@@ -1,4 +1,4 @@
-package sourceCode.java.lang.Class;
+package com.viki.java.lang.Class;
 
 /**
  * SyntheticClass是一个合成类，JVM在编译类时，也会编译该类内部定义的类(如，内部类，方法内部定义的类)，这些类称之为合成类

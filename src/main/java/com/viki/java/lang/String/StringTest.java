@@ -1,4 +1,4 @@
-package sourceCode.java.lang.String;
+package com.viki.java.lang.String;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;

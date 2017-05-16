@@ -1,4 +1,4 @@
-package other;
+package com.viki.java.other;
 
 /**
  * Created by Viki on 2017/5/15.

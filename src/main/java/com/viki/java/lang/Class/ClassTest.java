@@ -1,4 +1,4 @@
-package sourceCode.java.lang.Class;
+package com.viki.java.lang.Class;
 
 public class ClassTest {
 
