@@ -1,5 +1,7 @@
 package com.viki.java.lang.Thread;
 
+import org.junit.Test;
+
 /**
  * Created by Viki on 2017/5/13.
  */
@@ -12,7 +14,8 @@ public class ThreadTest {
     *   2. t = null然后gc只会回收分配在堆上的线程对象，无法回收运行在虚拟机栈上的栈帧
     *   3. 举例: main线程也没有任何引用指向它，但不会被GC 回收，就因为第1点.
     * */
-    public static void liveThreadAsGcRoots() {
+    @Test
+    public void liveThreadAsGcRoots() {
         // anonymous class extends Thread
         Thread t = new Thread() {
             public void run() {
@@ -41,6 +44,4 @@ public class ThreadTest {
         } // The program will run forever until you use ^C to stop it
     }
 
-    public static void main(String[] args) {
-    }
 }

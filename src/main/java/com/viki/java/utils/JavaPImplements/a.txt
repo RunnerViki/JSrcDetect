@@ -1,0 +1,112 @@
+Classfile /E:/viki/JSrcDetect/src/main/java/com/viki/java/utils/JavaPImplements/Test.class
+  Last modified 2017-5-16; size 764 bytes
+  MD5 checksum 697c48e7862bb66e94a6b09c1de519fe
+  Compiled from "Test.java"
+public class com.viki.java.utils.JavaPImplements.Test
+  SourceFile: "Test.java"
+  minor version: 0
+  major version: 51
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #14.#27        //  java/lang/Object."<init>":()V
+   #2 = String             #28            //  Hello
+   #3 = Fieldref           #4.#29         //  com/viki/java/utils/JavaPImplements/Test.s1:Ljava/lang/String;
+   #4 = Class              #30            //  com/viki/java/utils/JavaPImplements/Test
+   #5 = Methodref          #4.#27         //  com/viki/java/utils/JavaPImplements/Test."<init>":()V
+   #6 = Fieldref           #4.#31         //  com/viki/java/utils/JavaPImplements/Test.t1:Lcom/viki/java/utils/JavaPImplements/Test;
+   #7 = String             #32            //  world
+   #8 = Fieldref           #33.#34        //  java/lang/System.out:Ljava/io/PrintStream;
+   #9 = Class              #35            //  java/lang/StringBuilder
+  #10 = Methodref          #9.#36         //  java/lang/StringBuilder."<init>":(Ljava/lang/String;)V
+  #11 = String             #37            //   
+  #12 = Methodref          #9.#38         //  java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #13 = Methodref          #39.#40        //  java/io/PrintStream.println:(Ljava/lang/Object;)V
+  #14 = Class              #41            //  java/lang/Object
+  #15 = Utf8               s1
+  #16 = Utf8               Ljava/lang/String;
+  #17 = Utf8               t1
+  #18 = Utf8               Lcom/viki/java/utils/JavaPImplements/Test;
+  #19 = Utf8               <init>
+  #20 = Utf8               ()V
+  #21 = Utf8               Code
+  #22 = Utf8               LineNumberTable
+  #23 = Utf8               main
+  #24 = Utf8               ([Ljava/lang/String;)V
+  #25 = Utf8               SourceFile
+  #26 = Utf8               Test.java
+  #27 = NameAndType        #19:#20        //  "<init>":()V
+  #28 = Utf8               Hello
+  #29 = NameAndType        #15:#16        //  s1:Ljava/lang/String;
+  #30 = Utf8               com/viki/java/utils/JavaPImplements/Test
+  #31 = NameAndType        #17:#18        //  t1:Lcom/viki/java/utils/JavaPImplements/Test;
+  #32 = Utf8               world
+  #33 = Class              #42            //  java/lang/System
+  #34 = NameAndType        #43:#44        //  out:Ljava/io/PrintStream;
+  #35 = Utf8               java/lang/StringBuilder
+  #36 = NameAndType        #19:#45        //  "<init>":(Ljava/lang/String;)V
+  #37 = Utf8                
+  #38 = NameAndType        #46:#47        //  append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #39 = Class              #48            //  java/io/PrintStream
+  #40 = NameAndType        #49:#50        //  println:(Ljava/lang/Object;)V
+  #41 = Utf8               java/lang/Object
+  #42 = Utf8               java/lang/System
+  #43 = Utf8               out
+  #44 = Utf8               Ljava/io/PrintStream;
+  #45 = Utf8               (Ljava/lang/String;)V
+  #46 = Utf8               append
+  #47 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #48 = Utf8               java/io/PrintStream
+  #49 = Utf8               println
+  #50 = Utf8               (Ljava/lang/Object;)V
+{
+  public java.lang.String s1;
+    flags: ACC_PUBLIC
+
+  com.viki.java.utils.JavaPImplements.Test t1;
+    flags: 
+
+  public com.viki.java.utils.JavaPImplements.Test();
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0       
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0       
+         5: ldc           #2                  // String Hello
+         7: putfield      #3                  // Field s1:Ljava/lang/String;
+        10: aload_0       
+        11: new           #4                  // class com/viki/java/utils/JavaPImplements/Test
+        14: dup           
+        15: invokespecial #5                  // Method "<init>":()V
+        18: putfield      #6                  // Field t1:Lcom/viki/java/utils/JavaPImplements/Test;
+        21: return        
+      LineNumberTable:
+        line 7: 0
+        line 8: 4
+        line 10: 10
+
+  public static void main(java.lang.String[]);
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=5, locals=2, args_size=1
+         0: ldc           #7                  // String world
+         2: astore_1      
+         3: getstatic     #8                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         6: new           #9                  // class java/lang/StringBuilder
+         9: dup           
+        10: new           #4                  // class com/viki/java/utils/JavaPImplements/Test
+        13: dup           
+        14: invokespecial #5                  // Method "<init>":()V
+        17: getfield      #3                  // Field s1:Ljava/lang/String;
+        20: invokespecial #10                 // Method java/lang/StringBuilder."<init>":(Ljava/lang/String;)V
+        23: ldc           #11                 // String  
+        25: invokevirtual #12                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        28: aload_1       
+        29: invokevirtual #12                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        32: invokevirtual #13                 // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+        35: return        
+      LineNumberTable:
+        line 13: 0
+        line 14: 3
+        line 15: 35
+}

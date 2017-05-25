@@ -1,6 +1,10 @@
 package com.viki.java.lang.System;
 
+import org.junit.Test;
+
+import java.io.File;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class SystemTest {
 
@@ -14,6 +18,7 @@ public class SystemTest {
 	 *
 	 * 注：一秒等于十亿纳秒；一秒等于一千毫秒；
 	 */
+	@Test
 	public void printTime(){
 		System.out.println(new Date() + "" + System.nanoTime());
 		System.out.println(System.currentTimeMillis());
@@ -30,25 +35,53 @@ public class SystemTest {
 	 *
 	 *  b) object.clone()
 	 */
+	@Test
 	public void copyArrayTest(){
-		String[] sourceStrArray = new String[]{"a","b","c","d","e","f","g"};
-		String[] destStrArray = new String[8];
+		Object[] sourceStrArray = new Object[]{new String("a"),new Integer(2),new File(""),new Object(),"e","f","g"};
+		Object[] destStrArray = new Object[8];
 		System.arraycopy(sourceStrArray, 0, destStrArray, 0, 6);
-		for(String str : destStrArray){
+		for(Object str : destStrArray){
 			System.out.println(str);
 		}
 		System.out.println(sourceStrArray[0] == destStrArray[0]);
 	}
 
+	@Test
 	public void cloneTest(){
 		SystemTest st = new SystemTest();
 		try {
 			SystemTest st2 = (SystemTest) st.clone();
+			System.out.println(st2 == st);
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
-
 	}
+
+	/*
+	* JVM找出已经被丢弃但并没有执行finalize的对象，并且执行finalize方法
+	* 如何判断已经被丢弃? 已经加入到了finalizer守护线程处理队列，即认为被丢弃。
+	* 所以在执行runFinalization前，最好执行一次gc方法
+	* */
+	@Test
+	public void runFinalization(){
+		boolean isExecuteGc = false;
+		Object s = new Object(){
+			protected void finalize() throws Throwable {
+				System.out.println(" run finalize");
+			}
+		};
+		s = null;
+		if(isExecuteGc){
+			System.gc();	 // 加上了gc之后，直接打印run finalize
+		}
+		System.runFinalization();
+		try {
+			TimeUnit.SECONDS.sleep(10);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
 
 	public static void main(String[] args){
 		SystemTest systemTest = new SystemTest();
