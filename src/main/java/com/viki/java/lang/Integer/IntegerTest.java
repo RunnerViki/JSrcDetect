@@ -5,8 +5,8 @@ import org.junit.Test;
 public class IntegerTest {
 
 	/*
-	* {@link Integer#valueOf()} å¦‚æžœå‚æ•°å€¼åœ¨-128åˆ°127ä¹‹é—´ï¼Œæ˜¯ä»ŽIntegerCacheè¿”å›žçš„ã€‚
-	* ä½†new Integer()å¹¶ä¸æ˜¯
+	* {@link Integer#valueOf()} Èç¹û²ÎÊýÖµÔÚ-128µ½127Ö®¼ä£¬ÊÇ´ÓIntegerCache·µ»ØµÄ¡£
+	* µ«new Integer()²¢²»ÊÇ
 	* */
 	@Test
 	public void equals(){
@@ -26,18 +26,18 @@ public class IntegerTest {
 	@Test
 	public void binOr(){
 		int x = 54;
-		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x)+"	åŽé¢æ·»åŠ çš„å€¼ï¼š"+Integer.toBinaryString(x>>1));
+		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x)+"	ºóÃæÌí¼ÓµÄÖµ£º"+Integer.toBinaryString(x>>1));
 		x |= x>>1;
-		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x)+"	åŽé¢æ·»åŠ çš„å€¼ï¼š"+Integer.toBinaryString(x>>2));
+		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x)+"	ºóÃæÌí¼ÓµÄÖµ£º"+Integer.toBinaryString(x>>2));
 		x |= x>>2;
-		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x)+"	åŽé¢æ·»åŠ çš„å€¼ï¼š"+Integer.toBinaryString(x>>4));
+		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x)+"	ºóÃæÌí¼ÓµÄÖµ£º"+Integer.toBinaryString(x>>4));
 		x |= x>>4;
-		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x)+"	åŽé¢æ·»åŠ çš„å€¼ï¼š"+Integer.toBinaryString(x>>8));
+		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x)+"	ºóÃæÌí¼ÓµÄÖµ£º"+Integer.toBinaryString(x>>8));
 		x |= x>>8;
-		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x)+"	åŽé¢æ·»åŠ çš„å€¼ï¼š"+Integer.toBinaryString(x>>16));
+		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x)+"	ºóÃæÌí¼ÓµÄÖµ£º"+Integer.toBinaryString(x>>16));
 		x |= x>>16;
-		System.out.println("åŽŸå§‹å€¼ï¼š"+x+"äºŒè¿›åˆ¶ï¼š"+Integer.toBinaryString(x));
-		System.out.println((x >>> 1)+"æœ€ç»ˆç»“æžœ"+Integer.toBinaryString(x >>> 1));
+		System.out.println("Ô­Ê¼Öµ£º"+x+"¶þ½øÖÆ£º"+Integer.toBinaryString(x));
+		System.out.println((x >>> 1)+"×îÖÕ½á¹û"+Integer.toBinaryString(x >>> 1));
 	}
 
 
