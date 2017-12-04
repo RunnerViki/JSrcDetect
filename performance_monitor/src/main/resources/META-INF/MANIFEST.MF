@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Premain-Class: com.viki.premain.Premain
+Can-Redefine-Classes: true  
+Can-Retransform-Classes: true  
+Can-Set-Native-Method-Prefix: true
+Archiver-Version: Plexus Archiver
+Built-By: Administrator
+Created-By: Apache Maven 3.2.1
+Build-Jdk: 1.8.0_60
+
