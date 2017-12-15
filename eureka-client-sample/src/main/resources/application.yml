@@ -1,0 +1,11 @@
+server:
+  port: 0
+  application:
+    name: eureka.client
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7070/eureka/
+  instance:
+    appname: eureka.client.${random.int}

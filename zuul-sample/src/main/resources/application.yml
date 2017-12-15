@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 5555
+ 
+# routes to serviceId 这里边是通过serviceid来绑定地址，当在路径后添加/api-a/   则是访问service-A对应的服务。
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-A
+    api-b:
+      path: /api-b/**
+      serviceId: service-B
+    api:
+      path: /api/**
+      serviceId: ribbon-server
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7070/eureka/

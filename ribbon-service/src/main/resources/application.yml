@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ribbon-server
+
+server:
+  port: 0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7070/eureka/
+  instance:
+    appname: ribbon-${random.int}
+
+SERVICE-A:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

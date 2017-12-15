@@ -24,9 +24,7 @@ public class EnhancementThreadPoolExecutor extends ThreadPoolExecutor {
 
     private volatile AtomicLong tasksInQueue = new AtomicLong();
 
-    private volatile RingBuffer<Long> recentTaskCount = RingBuffer.createSingleProducer(()->{
-        return new Long(0);
-    }, 1000);
+    private volatile RingBuffer<Long> recentTaskCount = RingBuffer.createSingleProducer(()->0L, 1000);
 
     public EnhancementThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
         this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, new ThreadFactory() {
