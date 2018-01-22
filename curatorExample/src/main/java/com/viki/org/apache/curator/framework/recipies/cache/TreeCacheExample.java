@@ -1,31 +1,12 @@
 package com.viki.org.apache.curator.framework.recipies.cache;
 
-import com.alibaba.fastjson.JSONObject;
-import org.apache.curator.framework.CuratorFramework;
-import org.apache.curator.framework.CuratorFrameworkFactory;
-import org.apache.curator.framework.api.UnhandledErrorListener;
-import org.apache.curator.framework.recipes.cache.ChildData;
-import org.apache.curator.framework.recipes.cache.TreeCache;
-import org.apache.curator.framework.recipes.cache.TreeCacheEvent;
-import org.apache.curator.framework.recipes.cache.TreeCacheListener;
-import org.apache.curator.framework.recipes.locks.InterProcessMutex;
-import org.apache.curator.retry.ExponentialBackoffRetry;
-import org.apache.zookeeper.CreateMode;
-import org.apache.zookeeper.data.Stat;
-
-import java.util.Iterator;
-import java.util.Map;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-
 /**
  * Function: TODO
  *
  * @author Viki
  * @date 2017/11/13 13:45
  */
-public class TreeCacheExample {
+public class TreeCacheExample {/*
 
     private static final String PATH = "/mq_monitor8";
 
@@ -145,5 +126,5 @@ public class TreeCacheExample {
             }
         }
 
-    }
+    }*/
 }

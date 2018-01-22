@@ -45,20 +45,24 @@ public class TimeCostTransformer implements ClassFileTransformer{
             if(null == monitorPackage || !className.startsWith(monitorPackage)){
                 return cc.toBytecode();
             }
-            Arrays.stream(cc.getDeclaredMethods()).filter(method -> (method.getModifiers() & AccessFlag.STATIC) != AccessFlag.STATIC && (method.getModifiers() & AccessFlag.ABSTRACT) != AccessFlag.ABSTRACT).forEach(
-                method -> {
-                    try {
-                        method.addLocalVariable("startTime", CtClass.longType);
-                        method.insertBefore("startTime = System.currentTimeMillis();\n");
-                        method.insertAfter("" +
-                                "long elapse = (System.currentTimeMillis() - startTime);\n" +
-                                "if(elapse > "+timeElapseThreshold+"){" +
-                                "   com.viki.utils.TimeCostRecorder.addRecord(\""+method.getLongName() + Descriptor.toString(method.getSignature())+"\",elapse);" +
-                                "}");
-                    } catch (CannotCompileException e) {
-                        e.printStackTrace();
-                    }
-                }
+            Arrays.stream(cc.getDeclaredMethods())
+                    .filter(method -> (method.getModifiers() & AccessFlag.STATIC) != AccessFlag.STATIC && (method.getModifiers() & AccessFlag.ABSTRACT) != AccessFlag.ABSTRACT)
+                    .forEach(
+                        method -> {
+                            try {
+                                method.addLocalVariable("startTime", CtClass.longType);
+                                method.insertBefore("startTime = System.currentTimeMillis();\n");
+                                method.insertAfter("" +
+                                        "long elapse = (System.currentTimeMillis() - startTime);\n" +
+                                        "if(elapse > "+timeElapseThreshold+"){" +
+                                        "   com.viki.utils.TimeCostRecorder.addRecord(\""+method.getLongName() + Descriptor.toString(method.getSignature())+"\",elapse);" +
+                                        "}");
+
+
+                            } catch (CannotCompileException e) {
+                                e.printStackTrace();
+                            }
+                        }
             );
             return cc.toBytecode();
         } catch (Exception e) {

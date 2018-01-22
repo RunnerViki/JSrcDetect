@@ -25,6 +25,6 @@ public class ConsumerController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String add(@RequestParam Integer a, @RequestParam Integer b) {
         this.loadBalancerClient.choose("service-A");//随机访问策略
-        return restTemplate.getForEntity("http://localhost:5555/api-a/add/"+a+"/"+b, String.class).getBody();
+        return restTemplate.getForEntity("http://service-A/add/"+a+"/"+b, String.class).getBody();
     }
 }
